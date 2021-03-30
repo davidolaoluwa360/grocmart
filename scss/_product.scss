@@ -8,6 +8,62 @@
       margin-bottom: 2.5rem;
       background-color: rgb(227, 227, 227);
       box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.5);
+      .product-body {
+        .product-price-container {
+          .product-name {
+            text-transform: uppercase;
+            font-weight: weight(bold);
+          }
+
+          .product-price-wrapper {
+            @include flexcenter(flex, row, center, center, nowrap);
+
+            .old-price {
+              text-decoration: line-through;
+              color: $paragraph-color;
+              margin-right: 0.5rem;
+            }
+
+            .original-price {
+              color: $secondary-color;
+            }
+          }
+        }
+
+        .cart-search-wrapper {
+          @include flexcenter(flex, row, center, center, nowrap);
+          margin-top: 0.9rem;
+          visibility: hidden;
+          opacity: 0;
+
+          @keyframes cartSearch {
+            0% {
+              visibility: hidden;
+              opacity: 0;
+            }
+
+            100% {
+              visibility: visible;
+              opacity: 1;
+            }
+          }
+
+          .search-product {
+            margin-right: 0.6rem;
+            background-color: $primary-color;
+            border-radius: 90px;
+            padding: 0.6rem 0.7rem;
+            color: #fff;
+          }
+
+          .add-product-to-card {
+            background-color: $secondary-color;
+            border-radius: 90px;
+            padding: 0.6rem 0.7rem;
+            color: #fff;
+          }
+        }
+      }
       padding: 2.9rem 1.5rem;
       border-radius: 10px;
       cursor: pointer;
