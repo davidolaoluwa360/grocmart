@@ -1,6 +1,6 @@
 "use strict";
 
-import { service_data, about_data } from "./data.js";
+import { service_data, about_data, products_data } from "./data.js";
 
 function createElement(element_name, constructor) {
     customElements.define(element_name, constructor);
@@ -85,7 +85,7 @@ class XAbout extends HTMLElement{
         this.setAttribute("class", "about-section-container");
     }
     connectedCallback() {
-        // browser calls this method when the element is added to the document
+        // browser calls this metroduct-wrapperhod when the element is added to the document
         // (can be called many times if an element is repeatedly added/removed)
         this.render();
     }
@@ -93,16 +93,64 @@ class XAbout extends HTMLElement{
 
 createElement("grocmart-about", XAbout);
 
-// class XProduct extends HTMLElement{
-//     constructor() {
-//         super();
-//     }
+function formatCurrency(value) {
+    return "$" + value;
+}
 
-//     render() {
-        
-//     }
+class XProduct extends HTMLElement{
+    constructor() {
+        super();
+    }
 
-//     connectedCallback() {
-        
-//     }
-// }
+    render() {
+        this.innerHTML += `
+            <p class="product-style-tag t-center header-tag-style">Latest Arrivals</p>
+            <h2 class="product--title-name t-center header">New Products</h2>
+
+            <div class="product-filtering-wrapper"></div>
+            <div class="product-wrapper></div>
+        `;
+
+        const product_parent = document.createElement("div");
+        product_parent.setAttribute("class", "product-wrapper");
+
+        products_data.products.forEach(product => {
+            const products = `
+                <div class="product-card">
+                        <div class="product-header">
+                            <div class="product-panel">
+                                ${!product.is_available || product.quantity == 0 ? ` <span class="sold_panel">sold</span>` : ""}
+                                ${!product.is_available || product.quantity == 0 ? "" : `<span class="popularity_panel">${product.polularity}</span>`}
+                            </div>
+                            <img src="${product.image}" class="img-fluid" alt="${product.name}"/>
+                        </div>
+
+                        <div class="product-body">
+                            <div class="product-price-container">
+                                <p class="product-name t-center">${product.name}</p>
+                                <p class="product-price-wrapper">
+                                    ${!product["old-price"] ? "" : ` <span class="old-price"><em>${formatCurrency(product["old-price"])}</em></span>`}
+                                    <span class="original-price">${formatCurrency(product.price)}</span>
+                                </p>
+                            </div>
+
+                            <div class="cart-search-wrapper">
+                                <a class="search-product" href="#"><i class="fas fa-search"></i></a>
+                                <a class="add-product-to-card" href="#"><i class="fas fa-cart-arrow-down"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            product_parent.innerHTML += `${ products }`;
+        });
+        this.appendChild(product_parent);
+    }
+
+    connectedCallback() {
+        // browser calls this metroduct-wrapperhod when the element is added to the document
+        // (can be called many times if an element is repeatedly added/removed)
+        this.render();
+    }
+}
+
+createElement("grocmart-product", XProduct);

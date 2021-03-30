@@ -32,6 +32,8 @@
           font-size: 1.2rem;
           text-transform: uppercase;
           cursor: pointer;
+          transition: color 1s ease-in;
+
           &:hover {
             color: $secondary-color;
           }

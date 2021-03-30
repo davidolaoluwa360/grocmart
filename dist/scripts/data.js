@@ -34,4 +34,125 @@ const about_data = {
     }
 };
 
-export { service_data, about_data };
+
+const product_categories = {
+    "categories": [
+        {
+            "id": 1,
+            "name": "vegetables",
+            "description": "vegetable products"
+        },
+        {
+            "id": 2,
+            "name": "fruits",
+            "description": "fruits products"
+        },
+        {
+            "id": 3,
+            "name": "bread",
+            "description": "bread products"
+        }
+    ]
+}
+
+const products_data = {
+    products: [
+        {
+            "id": 1,
+            "name": "Bananas",
+            "image": "./dist/assets/product-1.png",
+            "price": "10.00",
+            "old-price": "20.00",
+            "is_available": true,
+            "polularity": "New",
+            "quantity": 20,
+            "category": "fruits",
+            "description": ""
+        },
+        {
+            "id": 2,
+            "name": "Potatoes",
+            "image": "./dist/assets/product-2.png",
+            "price": "12.00",
+            "old-price": "",
+            "is_available": true,
+            "polularity": "Hot",
+            "quantity": 20,
+            "category": "vegetables",
+            "description": ""
+        },
+        {
+            "id": 3,
+            "name": "Carrots",
+            "image": "./dist/assets/product-3.png",
+            "price": "14.00",
+            "old-price": "",
+            "is_available": false,
+            "polularity": "New",
+            "quantity": 0,
+            "category": "fruits",
+            "description": ""
+        },
+        {
+            "id": "4",
+            "name": "Sweet peppers",
+            "image": "./dist/assets/product-4.png",
+            "price": "3.00",
+            "old-price": "1.00",
+            "is_available": true,
+            "polularity": "New",
+            "quantity": 8,
+            "category": "vegetables",
+            "description": ""
+        },
+        {
+            "id": "5",
+            "name": "Bread",
+            "image": "./dist/assets/product-5.png",
+            "price": "4.00",
+            "old-price": "",
+            "is_available": false,
+            "polularity": "Hot",
+            "quantity": 0,
+            "category": "bread",
+            "description": ""
+        },
+        {
+            "id": "6",
+            "name": "Strawberries",
+            "image": "./dist/assets/product-6.png",
+            "price": "7.00",
+            "old-price": "20.00",
+            "is_available": true,
+            "polularity": "New",
+            "quantity": 8,
+            "category": "vegetables",
+            "description": ""
+        },
+        {
+            "id": "7",
+            "name": "Cucumbers",
+            "image": "./dist/assets/product-7.png",
+            "price": "1.00",
+            "old-price": "",
+            "is_available": true,
+            "polularity": "Hot",
+            "quantity": 8,
+            "category": "fruits",
+            "description": ""
+        },
+        {
+            "id": "8",
+            "name": "Bagels",
+            "image": "./dist/assets/product-8.png",
+            "price": "2.00",
+            "old-price": "3.00",
+            "is_available": true,
+            "polularity": "New",
+            "quantity": 8,
+            "category": "bread",
+            "description": ""
+        }
+    ]
+};
+export { service_data, about_data, products_data };
