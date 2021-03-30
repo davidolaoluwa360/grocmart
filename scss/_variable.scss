@@ -1,0 +1,80 @@
+// external files
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
+
+// color mode
+$primary-color: #e52029;
+$secondary-color: #7fd02c;
+$color: #000;
+
+// paragraph mode
+$paragraph-color: #777777;
+$paragraph-size-sm: 0.8rem;
+$paragraph-size-xl: 1.1rem;
+
+//header mode
+$header-size-xl: 2.5rem;
+$header-size-sm: 1.5rem;
+$header-color: #151515;
+
+// header tag style mode
+$header-tag-size-sm: 1.3rem;
+$header-tag-size-xl: 1.5rem;
+
+// margin mode
+$default-margin-top: 20px;
+$default-margin-bottom: 10px;
+
+// responsive mode
+$desktop: 992px;
+$tablet-portrait: 600px;
+$tablet-landscape: 768px;
+
+// map of  all default font weights
+$font-weight: (
+  "regular": 600,
+  "medium": 700,
+  "bold": 900,
+);
+
+@function weight($value) {
+  @return map-get($font-weight, $value);
+}
+
+@mixin flexcenter(
+  $display-pos: flex,
+  $flex-direction: row,
+  $align-pos: flex-start,
+  $justify-pos: flex-start,
+  $wrap-pos: nowrap
+) {
+  display: $display-pos;
+  flex-flow: $flex-direction $wrap-pos;
+  justify-content: $justify-pos;
+  align-items: $align-pos;
+}
+
+@mixin flex($fg: 0, $fs: 0, $fb: auto) {
+  flex: $fg $fs $fb;
+}
+
+@mixin tablet-portrait() {
+  @media screen and (min-width: $tablet-portrait) {
+    @content;
+  }
+}
+
+@mixin tablet-landscape {
+  @media only screen and (min-width: $tablet-landscape) {
+    @content;
+  }
+}
+
+@mixin desktop() {
+  @media screen and (min-width: $desktop) {
+    @content;
+  }
+}

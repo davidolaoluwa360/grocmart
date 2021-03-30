@@ -1,0 +1,80 @@
+.service-section-wrapper {
+  padding: 4rem 1.7rem;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.8)
+    ),
+    url("../assets/service-bg.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  color: #fff;
+
+  .service-wrapper {
+    @include flexcenter(flex, column, center, flex-start, wrap);
+    .service-card {
+      padding: 1.5rem;
+
+      .service-header {
+        @include flexcenter(flex, column, center, center, wrap);
+        .fas,
+        .far {
+          color: $secondary-color;
+          font-weight: weight(bold);
+          font-size: 2rem;
+        }
+
+        .service-name {
+          font-weight: weight(bold);
+          font-size: 1.2rem;
+          text-transform: uppercase;
+          cursor: pointer;
+          &:hover {
+            color: $secondary-color;
+          }
+        }
+      }
+
+      .paragraph {
+        color: #fff;
+      }
+    }
+  }
+
+  @include tablet-portrait() {
+    .service-wrapper {
+      @include flexcenter(flex, row, flex-start, flex-start, wrap);
+      .service-card {
+        @include flex(0, 0, 46%);
+        margin-left: 2%;
+
+        .service-header {
+          @include flexcenter(flex, column, flex-start, flex-start, wrap);
+          .fas,
+          .far {
+            font-size: 2rem;
+          }
+
+          .service-name {
+            font-size: 1.2rem;
+          }
+        }
+
+        .paragraph {
+          font-size: 0.9rem;
+          text-align: left !important;
+        }
+      }
+    }
+  }
+
+  @include desktop() {
+    .service-wrapper {
+      .service-card {
+        @include flex(0, 0, 23%);
+      }
+    }
+  }
+}

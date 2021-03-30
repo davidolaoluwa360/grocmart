@@ -1,0 +1,73 @@
+.about-section-container {
+  padding: 1.2rem;
+  .about-img-wrapper {
+    margin-bottom: $default-margin-bottom;
+  }
+
+  .about-content {
+    .signature-container {
+      @include flexcenter(flex, column, center, flex-start, wrap);
+      .about-signature-wrapper {
+        @include flexcenter(flex, row, center, center, wrap);
+        margin-bottom: .7rem;
+        .about-signature-btn {
+          border-radius: 90px;
+          padding: 0.7rem 0.8rem;
+          border: none;
+        }
+
+        .grocmart-author-signature {
+          margin-left: 1.9rem;
+        }
+      }
+    }
+  }
+
+  @include desktop() {
+    @include flexcenter(flex, row, center, flex-start, wrap);
+    .about-img-wrapper {
+      @include flex(0, 0, 45%);
+    }
+
+    .about-content {
+      @include flex(0, 0, 45%);
+      margin-top: 7.9rem;
+      padding: 1.5rem;
+      height: 100%;
+      margin-left: 7%;
+      .about-header {
+        .about-header-style {
+          font-size: $header-tag-size-xl;
+          text-align: left;
+        }
+
+        .header {
+          font-size: $header-size-xl;
+          text-align: left;
+        }
+      }
+
+      .paragraph {
+        font-size: $paragraph-size-xl !important;
+        text-align: left !important;
+      }
+
+      .signature-container {
+        @include flexcenter(flex, row, center, flex-start, wrap);
+        .about-signature-wrapper {
+          @include flex(0, 0, 50%);
+          .about-signature-btn {
+            border-radius: 90px;
+            padding: 1.2rem 1.3rem;
+            margin-left: -4.3rem !important;
+          }
+        }
+      }
+
+      .signature-img-wrapper {
+        @include flex(0, 0, 45%);
+        margin-left: 5%;
+      }
+    }
+  }
+}
